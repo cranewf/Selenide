@@ -17,11 +17,12 @@ public class CardDeliveryTest {
 //    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 //    private String formatDate = addDays.format(formatter);
 
-    private String generateDate(int addDays, String pattern){
+    private String generateDate(int addDays, String pattern) {
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
     }
+
     @Test
-    public void deliveryCard(){
+    public void deliveryCard() {
         open("http://localhost:9999/");
         $("[data-test-id='city'] input").setValue("Нижний Новгород");
         $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
