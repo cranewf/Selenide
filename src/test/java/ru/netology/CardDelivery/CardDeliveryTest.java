@@ -32,7 +32,7 @@ public class CardDeliveryTest {
         $("[data-test-id='phone'] input").setValue("+79500000000");
         $("[data-test-id='agreement']").click();
         $("button.button").click();
-        $(".notification_visible")
+        $(".notification__title")
                 .shouldBe(Condition.visible, Duration.ofSeconds(15))
                 .shouldHave(Condition.text("Успешно"));
         $(".notification__content")
